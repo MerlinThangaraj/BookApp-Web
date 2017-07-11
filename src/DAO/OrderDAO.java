@@ -29,7 +29,7 @@ public class OrderDAO {
 //public static void main(String[] args) throws Exception {
 
 
-	public void orderList(Order user) throws Exception {
+	 public List<Order> orderList() throws Exception {
 		Connection con = ConnectionUtil.getConnection();
 		String sql = "select user_id, book_id,quantity,status,order_date from orders";
 		PreparedStatement pst = con.prepareStatement(sql);
@@ -53,6 +53,7 @@ public class OrderDAO {
 		for (Order o : orderlist) {
 			System.out.println(o);
 		}
+		return orderlist;
 
 }
 }
